@@ -4,17 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles/main.css">
-  <title>Weather Watch</title>
+  <title>Cocktail Craze</title>
 </head>
 <body>
-    <%- include("header.ejs") %>
- 
-    <h1> Enter the Zip Code & Country Code</h1>
-    <form>
-        <input type="text" placeholder="Enter Zip Code" name="zip" required>
-        <input type="text" placeholder="Enter Country Code" name="country" required>
-        <button type="submit">Check Weather</button>
-    </form>
+  <%- include("header.ejs") %>
+    <h1> 🍹 Your Random Cocktail Recipe 🍸 </h1>
+    <h2><%= cocktail.strDrink %></h2>
+    <img src="<%= cocktail.strDrinkThumb %>" alt="Cocktail Image" width="300">
+
+    <h3>Ingredients</h3>
+    <ul>
+        <% for(let i=1;i<=15;i++) { %>
+          <% let ingredient = cocktail["strIngredient"+i]; %>
+          <% let measure = cocktail["strMeasure"+i]; %>
+          <% if(ingredient){ %>
+              <li> <%= measure%> <%= ingredient %> </li>
+            <% } %>
+            <% } %>
+    </ul>
+
+    <h3>Instructions</h3>
+    <p><%= cocktail.strInstructions %></p>
+
+    <button onclick="window.location.reload()">🔄 Get Another Cocktail</button>
   <%- include("footer.ejs") %>
 </body>
 </html>
