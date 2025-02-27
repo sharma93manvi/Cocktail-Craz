@@ -1,0 +1,26 @@
+header {
+  background: rgb(75, 75, 145);
+  color: white;
+  padding: 2rem;
+}
+
+footer {
+  background: rgb(75, 75, 145);
+  color: white;
+  padding: 1rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.title {
+  font-family: sans-serif;
+  font-size: 2rem;
+  padding-left: 45rem;
+  align-items: center;
+}
+
+body{
+  background-color: rgb(237, 237, 237);
+}
